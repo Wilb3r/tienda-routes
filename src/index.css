@@ -6,7 +6,7 @@ body {
 
 header{
   display: flex;
-  background-color: rgb(252, 88, 102);
+  background-color: #1a1919;
   flex-direction: row;
   align-content: center;
   padding: 5px;
@@ -19,6 +19,7 @@ nav ul{
 
 nav a{
   text-decoration: none;
+  color: white;
 }
 
 nav ul li{
@@ -33,10 +34,14 @@ nav ul li{
 nav a.is-active{
   font-weight: bold;
   pointer-events: none;
-  background-color: rgb(189, 124, 135);
-  color: rgb(17, 15, 16);
+  background-color: rgb(12, 12, 12);
+  color: rgb(252, 248, 250);
 }
 
 ul{
   list-style-type: none;
+}
+
+h1, h2, h5, h6, p{
+  color: white;
 }

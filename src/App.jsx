@@ -1,12 +1,14 @@
 import React from "react";
 import './App.css'
 import { Routes, Route, Link, useParams, Outlet, NavLink as NL} from "react-router-dom";
+import { Button, Header, BtnLink, DetailCont, CenteredCont } from "./assets/styles-components/styles-comp";
 
 const Home = () => {
   return (
     <div className="features">
       <h2>Bienvenidos</h2>
       <p>Somos una tienda online de celulares</p>
+      <Link to="/search-page"><Button>Ver mas</Button></Link>
     </div> 
   )
 }
@@ -45,12 +47,12 @@ const SearchPage = () => {
     "Realme"
   ];
   return(
-    <div>
+    <div className="features">
       <h2>Pagina de Busqueda</h2>
       <ul>
         {celulares.map((celular) => (
           <li key={celular}>
-            <Link to={`/celulares/${celular}`}>{celular}</Link>
+            <Link to={`/celulares/${celular}`}><BtnLink>{celular}</BtnLink></Link>
           </li>
         ))}
       </ul>
@@ -64,8 +66,8 @@ const Celulares = () =>{
   return(
     <div className="features">
        <h2>info de Celulares</h2>
-      <h3>{nameCelular}</h3> 
-      <Link to='details'> <p>ver detalles</p> </Link>
+      <h2>{nameCelular}</h2> 
+      <Link to='details'> <BtnLink>ver detalles</BtnLink> </Link>
       <Outlet/>
     </div>
  
@@ -77,12 +79,12 @@ const CelularDetails = () => {
   const {nameCelular} = useParams();
   const detalles = data[nameCelular]; //hacemos referencia a la data
   return (
-    <div>
+    <DetailCont>
    <h3>Detalles del movil {nameCelular}</h3>
    <h4>Modelo: {detalles.modelo}</h4>
    <h4>Precio: {detalles.precio}</h4>
    <h4>Descripcion: {detalles.desc}</h4>
-    </div>
+    </DetailCont>
   )
 }
 
@@ -103,7 +105,7 @@ const NavLink = ({to, children, ...props}) =>{
 function App(){
   return (
     <div>
-      <header>
+      <Header>
       <h1>Logo</h1>
       <nav>
         <ul>
@@ -113,7 +115,8 @@ function App(){
       </nav>
       {/* <Home />
       <SearchPage /> */}
-      </header>
+      </Header>
+      <CenteredCont>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/search-page" element={<SearchPage/>}/>
@@ -122,6 +125,7 @@ function App(){
         </Route>
         <Route path="*" element={<h1>Page not Found</h1>}/>
       </Routes>
+      </CenteredCont>
     </div>
   )
 }
