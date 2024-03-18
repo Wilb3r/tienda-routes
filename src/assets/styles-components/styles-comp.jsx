@@ -29,11 +29,12 @@ export const StyledLink = styled(Link)`
 
 export const BtnLink = styled.button`
     background-color: white;
-    padding: 0.5em;
+    padding: 0.9em;
     border-radius: 5px;
     border: 0px;
     cursor: pointer;
-    margin-bottom: 0.7em;
+    margin-right: 0.7em;
+    margin-top: 0.7em;
 `;
 
 export const DetailCont = styled.div`
