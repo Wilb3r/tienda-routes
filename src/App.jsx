@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css'
 import { Routes, Route, Link, useParams, Outlet, NavLink as NL} from "react-router-dom";
-import { Button, Header, BtnLink, DetailCont, CenteredCont } from "./assets/styles-components/styles-comp";
+import { Button, Header, BtnLink, DetailCont, CenteredCont } from "./styles-components/styles-comp.jsx";
 
 const Home = () => {
   return (
