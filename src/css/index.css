@@ -29,6 +29,7 @@ nav ul li{
 
 .features {
   padding: 3px;
+  margin-left: 1em;
 }
 
 .features ul li{
@@ -38,8 +39,10 @@ nav ul li{
 nav a.is-active{
   font-weight: bold;
   pointer-events: none;
-  background-color: rgb(12, 12, 12);
+  background-color: #1f1e63;
   color: rgb(252, 248, 250);
+  padding: 3px;
+  border-radius: 5px;
 }
 
 ul{
@@ -48,4 +51,10 @@ ul{
 
 h1, h2, h5, h6, p{
   color: white;
+}
+
+img {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
 }
